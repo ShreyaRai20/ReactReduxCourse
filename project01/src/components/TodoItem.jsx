@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
+import { TodoItemsContext } from "../store/todo-items-store";
 
-function TodoItem({id,item,date,handleDelete}) {
+function TodoItem({item,date}) {
+   const TodoObj = useContext(TodoItemsContext)
+   const handleDelete = TodoObj.handleDelete
   return (
     <div className="row my-row">
     <div className="col">
